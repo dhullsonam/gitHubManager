@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SearchBar from "../../SearchBar/SearchBar";
 import List from "../../List/List";
 
 const HomePage = () => {
+    const [val, setVal] = useState('')
+    const getValueFromSearchBar = (inputVal) => {
+        console.log("getting value")
+        setVal(inputVal)
+    }
     return (
         <div>
-          <SearchBar/>
-
+            <SearchBar getValueFromSearchBar={getValueFromSearchBar}/>
+            <List filterByValue={val}/>
         </div>
     );
 };
