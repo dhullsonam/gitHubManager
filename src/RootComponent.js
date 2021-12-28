@@ -7,6 +7,7 @@ import {
     Route, Link
 } from "react-router-dom";
 import Navbar from "./components/Header/Navbar";
+import List from "./components/List/List";
 
 const RootComponent = () => {
     return (
