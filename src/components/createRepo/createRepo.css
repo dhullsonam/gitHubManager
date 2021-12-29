@@ -1,0 +1,14 @@
+.container{
+    background-color: lightgray;
+    height: 100vh;
+    padding: 30px;
+}
+.container button{
+    background-color: green;
+    border: transparent;
+}
+.container button:hover {
+    height: 20px;
+    width: 60px;
+    border-radius: 8px;
+}

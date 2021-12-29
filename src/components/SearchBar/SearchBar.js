@@ -11,7 +11,7 @@ const SearchBar = (props) => {
         props.getValueFromSearchBar(val)
     }
     return (
-        <div>
+        <div style={{marginLeft:"50px",marginTop:"30px"}}>
             <input placeholder={"search"} ref={refToMySearchedValue} />
             <button onClick={inputHandler}>search</button>
 

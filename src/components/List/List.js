@@ -25,10 +25,14 @@ const List = (props) => {
                 {items.map((i) => <li key={i.id} style={{
                     height: '70px',
                     border: "1px solid black",
+                    borderRadius:'10px',
                     width: '350px',
                     display: "inline-block",
-                    padding: '10px'
-                }}>{i.name} {i.id}</li>)}
+                    padding: '10px',
+                    backgroundColor:"lightsteelblue",
+                    margin:"10px",
+                    wordSpacing:"5px"
+                }}>RepoName : {i.name} <br></br> Date : {i.created_at}</li>)}
             </ul>
 
         </>
