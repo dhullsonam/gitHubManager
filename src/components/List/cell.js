@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import DeleteRepoHeaders from "./DeleteRepoHeaders";
 
 const Sugar = require('sugar');
 
@@ -19,8 +20,11 @@ const Cell = (props) => {
         margin: "10px",
         wordSpacing: "5px"
     }
+
     const deleteButtonHandler = () => {
-        props.deleteHandler(id)
+        DeleteRepoHeaders(name, (res) => {
+            props.deleteHandler(id)
+        })
     }
 
     return (

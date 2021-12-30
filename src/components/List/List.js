@@ -21,11 +21,11 @@ const List = (props) => {
             return obj.name.includes(valueFromSearchBar)
         })
     }
-    const repoNameDeleteHandler = (id) => {
-        items = items.filter( (i) => {
+    const repoNameDeleteHandler = async (id) => {
+        var updateItems = items.filter( (i) => {
             return i.id != id
         } );
-        setItems(items)
+        await setItems( updateItems )
     }
 
     return (

@@ -1,18 +1,17 @@
+import ApiHeaders from "../../Helpers/ApiHeaders";
+import ConvertToJson from "../../Helpers/ConvertToJson";
 
- function RepoDataHandler(props){
+function RepoDataHandler(props){
     const repoName = props
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", "token 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");
 
-    var raw = JSON.stringify({
+    var raw = ConvertToJson({
         "name": repoName,
         "private": false
     });
 
     var requestOptions = {
         method: 'POST',
-        headers: myHeaders,
+        headers: ApiHeaders(),
         body: raw,
         redirect: 'follow'
     };
