@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import Cell from "./cell";
 
-
 const List = (props) => {
     let valueFromSearchBar = props.filterByValue
     let [items, setItems] = useState([])
 
 
     useEffect(() => {
+        console.log("useEffect List")
         fetch("https://api.github.com/users/dhullSonam/repos")
             .then(response => response.json())
             .then(data => {
@@ -21,11 +21,18 @@ const List = (props) => {
             return obj.name.includes(valueFromSearchBar)
         })
     }
+    const repoNameDeleteHandler = (id) => {
+        items = items.filter( (i) => {
+            return i.id != id
+        } );
+        setItems(items)
+    }
+
     return (
         <>
             {
-                items.map((i) => {
-                    return <Cell key={i.id} data={i}/>
+                items.map((i ,index) => {
+                    return <Cell key={i.id} data={i} index={index} deleteHandler ={repoNameDeleteHandler}/>
                 })
             }
         </>

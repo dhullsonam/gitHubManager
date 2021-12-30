@@ -1,20 +1,11 @@
 import React, {useState} from 'react';
-import Sugar from "sugar";
 
-Date.prototype.yyyymmdd = function() {
-    var mm = this.getMonth() + 1; // getMonth() is zero-based
-    var dd = this.getDate();
-
-    return [this.getFullYear(),
-        (mm>9 ? '' : '0') + mm,
-        (dd>9 ? '' : '0') + dd
-    ].join('-');
-};
-
+const Sugar = require('sugar');
 
 const Cell = (props) => {
-    const {name, created_at: date} = props.data
-    let formattedDate = new Date(date)
+    const {id, name, created_at: date} = props.data
+    let datee = Sugar.Date.create(date)
+    let formattedDate = Sugar.Date(datee).full().raw
     // console.log(formattedDate.yyyymmdd())
 
     let cellStyle = {
@@ -28,12 +19,15 @@ const Cell = (props) => {
         margin: "10px",
         wordSpacing: "5px"
     }
+    const deleteButtonHandler = () => {
+        props.deleteHandler(id)
+    }
 
     return (
         <div style={cellStyle}>
             <h2>{name}</h2>
-            <h6>{formattedDate.yyyymmdd()}</h6>
-            <button>delete</button>
+            <h6>{formattedDate}</h6>
+            <button onClick={deleteButtonHandler}>delete</button>
         </div>
     );
 };
