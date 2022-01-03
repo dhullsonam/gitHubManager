@@ -6,7 +6,7 @@ import CreateRepo from "../createRepo/createRepo";
 
 const Navbar = () => {
     return (
-        <div style={{backgroundColor:"lavender"}}>
+        <div >
             <div style={{textAlign:"right" ,margin:'10px',}}>
                 <Link to={"/"} style={{padding:'10px'}}>Home</Link>
                 <Link to={"/about"} style={{padding:'10px'}}>About</Link>
