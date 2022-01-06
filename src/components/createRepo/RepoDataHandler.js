@@ -1,12 +1,13 @@
 import ApiHeaders from "../../Helpers/ApiHeaders";
 import ConvertToJson from "../../Helpers/ConvertToJson";
 
-function RepoDataHandler(props){
-    const [repoName , value]= props
+function RepoDataHandler(argu, isPrivate) {
+    const repoName = argu
+    console.log("value of :", isPrivate)
 
     var raw = ConvertToJson({
         "name": repoName,
-        "private": value
+        "private": isPrivate
     });
 
     var requestOptions = {

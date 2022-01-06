@@ -16,11 +16,10 @@ const CreateRepo = () => {
         if (itmValue != '') {
             setItemsValue(itmValue)
             console.log(" : " + itmValue)
-            if(value === 'private'){
-                RepoDataHandler(itmValue ,true)
-            }
-        else{
-                RepoDataHandler(itmValue ,false)
+            if (value === 'private') {
+                RepoDataHandler(itmValue, true)
+            } else {
+                RepoDataHandler(itmValue, false)
             }
 
         }
