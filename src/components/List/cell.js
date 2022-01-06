@@ -47,7 +47,7 @@ const Cell = (props) => {
             <h6>{formattedDate}</h6>
             <Popover>
                 <PopoverTrigger>
-                    <Button colorScheme='blue' size='sm'>Delete</Button>
+                    <Button colorScheme='orange' size='xs'>Delete</Button>
                 </PopoverTrigger>
                 <PopoverContent>
                     <PopoverArrow/>
@@ -55,7 +55,7 @@ const Cell = (props) => {
                     <PopoverHeader>Confirmation!</PopoverHeader>
                     <PopoverBody>Are you sure you want to Delete this Repo</PopoverBody>
                     <ButtonGroup size='sm'>
-                        <Button colorScheme='green'>Cancel</Button>
+                        <Button colorScheme='green' >Cancel</Button>
                         <Button colorScheme='blue' onClick={deleteButtonHandler}>
                             Confirm
                         </Button>

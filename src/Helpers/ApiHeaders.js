@@ -1,7 +1,7 @@
 const ApiHeaders = () => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", "token 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");
+    myHeaders.append("Authorization", "token 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");
     return myHeaders
 }
 

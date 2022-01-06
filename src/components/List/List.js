@@ -37,6 +37,8 @@ const List = (props) => {
                 emptyColor='gray.200'
                 color='blue.500'
                 size='xl'
+                marginLeft='600px'
+                marginTop='200px'
             />
         )
     }

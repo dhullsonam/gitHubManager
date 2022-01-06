@@ -2,11 +2,11 @@ import ApiHeaders from "../../Helpers/ApiHeaders";
 import ConvertToJson from "../../Helpers/ConvertToJson";
 
 function RepoDataHandler(props){
-    const repoName = props
+    const [repoName , value]= props
 
     var raw = ConvertToJson({
         "name": repoName,
-        "private": false
+        "private": value
     });
 
     var requestOptions = {
