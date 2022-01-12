@@ -12,7 +12,7 @@ const List = (props) => {
         fetch("https://api.github.com/users/dhullSonam/repos")
             .then(response => response.json())
             .then(data => {
-                setTimeout(()=> setItems(data), 5000)
+                setTimeout(() => setItems(data), 5000)
             })
     }, [])
 
@@ -23,10 +23,10 @@ const List = (props) => {
         })
     }
     const repoNameDeleteHandler = async (id) => {
-        var updateItems = items.filter( (i) => {
+        var updateItems = items.filter((i) => {
             return i.id != id
-        } );
-        await setItems( updateItems )
+        });
+        await setItems(updateItems)
     }
 
     if (items.length <= 0) {
@@ -45,14 +45,12 @@ const List = (props) => {
 
     return (
         <>
-
-
             {
-                items.map((i ,index) => {
+                items.map((i, index) => {
                     return <Cell key={i.id}
                                  data={i}
                                  index={index}
-                                 deleteHandler ={repoNameDeleteHandler}
+                                 deleteHandler={repoNameDeleteHandler}
                     />
                 })
             }
