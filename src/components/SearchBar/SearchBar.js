@@ -11,6 +11,7 @@ const SearchBar = (props) => {
         console.log(val)
         setInputValue(val)
         props.getValueFromSearchBar(val)
+        refToMySearchedValue.current.value = ''
     }
     return (
         <div style={{marginLeft: "50px", marginTop: "30px", textAlign: "center"}}>
@@ -23,7 +24,7 @@ const SearchBar = (props) => {
 
             />
             {/*<button onClick={inputHandler}>search</button>*/}
-            <Button colorScheme='teal' variant='ghost' onClick={inputHandler}>
+            <Button colorScheme='teal' variant='ghost' size={'sm'} onClick={inputHandler}>
                 Search
             </Button>
         </div>
