@@ -13,7 +13,7 @@ const SearchBar = (props) => {
         props.getValueFromSearchBar(val)
     }
     return (
-        <div style={{marginLeft: "50px", marginTop: "30px"}}>
+        <div style={{marginLeft: "50px", marginTop: "30px", textAlign: "center"}}>
             <Input variant='filled'
                    placeholder={"search"}
                    size='sm'
@@ -26,8 +26,6 @@ const SearchBar = (props) => {
             <Button colorScheme='teal' variant='ghost' onClick={inputHandler}>
                 Search
             </Button>
-
-
         </div>
     );
 };

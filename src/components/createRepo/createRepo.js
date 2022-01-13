@@ -4,7 +4,6 @@ import RepoDataHandler from "./RepoDataHandler";
 import GithubManagerButton from "../UIElements/GithubManagerButton";
 import {Button, ButtonGroup, Input, Stack} from '@chakra-ui/react';
 import {Radio, RadioGroup} from '@chakra-ui/react'
-import {logDOM} from "@testing-library/react";
 
 const CreateRepo = () => {
     const refToNewRepo = useRef('');
@@ -21,8 +20,8 @@ const CreateRepo = () => {
             } else {
                 RepoDataHandler(itmValue, false)
             }
-
         }
+        refToNewRepo.current.value = ''
     }
 
     return (
@@ -44,6 +43,7 @@ const CreateRepo = () => {
                     ref={refToNewRepo}
                     style={{width: "300px"}}
                     size='sm'
+
                 />
                 <Button
                     onClick={eventHandler}
