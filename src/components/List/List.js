@@ -23,15 +23,13 @@ const List = (props) => {
             })
     }, [])
 
-    // console.log(items)
+        console.log(items)
 
     if (valueFromSearchBar != '') {
         items = items.filter((obj) => {
             return obj.name.includes(valueFromSearchBar)
         })
-        if(items == ''){
-            console.log("ffgg")
-
+        if(items.length <= 0){
             return <h2>  {valueFromSearchBar} Doesn't Exist</h2>
         }
     }
