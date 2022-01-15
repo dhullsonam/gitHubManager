@@ -18,7 +18,7 @@ import {AiTwotoneDelete} from "@react-icons/all-files/ai/AiTwotoneDelete";
 const Sugar = require('sugar');
 
 const Cell = (props) => {
-    const {id, name, created_at: date, visibility, html_url} = props.data
+    const {id, name, created_at: date, visibility, html_url ,forks} = props.data
     let datee = Sugar.Date.create(date)
     let formattedDate = Sugar.Date(datee).full().raw
     // console.log(formattedDate.yyyymmdd())
@@ -39,7 +39,8 @@ const Cell = (props) => {
         <div style={cellStyle}>
             <Text fontSize='2xl' textOverflow={"ellipsis"}>{name}</Text>
             <Text fontSize='xs'>{formattedDate}</Text>
-            {/*<Text fontSize='xl'>Repo is : {visibility}</Text>*/}
+            <Text fontSize='md'>Repo is : {visibility}</Text>
+            <Text fontSize={"md"}>forks : {forks}</Text>
             <Link color='teal.500' href={html_url}>Repo-Link</Link>
             <Popover>
                 <PopoverTrigger>
@@ -50,9 +51,9 @@ const Cell = (props) => {
                     <PopoverCloseButton/>
                     <PopoverBody>Are you sure you want to Delete this Repo</PopoverBody>
                     <ButtonGroup size='sm'>
-                        <Button colorScheme='green'>Cancel</Button>
+                        {/*<Button colorScheme='green' onClick={}>No</Button>*/}
                         <Button colorScheme='blue' onClick={deleteButtonHandler}>
-                            Confirm
+                         Yes
                         </Button>
                     </ButtonGroup>
                 </PopoverContent>

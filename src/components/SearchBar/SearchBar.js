@@ -8,7 +8,7 @@ const SearchBar = (props) => {
     const refToMySearchedValue = useRef('')
     const inputHandler = () => {
         const val = refToMySearchedValue.current.value
-        console.log(val)
+        console.log("searchBar component" ,val)
         setInputValue(val)
         props.getValueFromSearchBar(val)
         refToMySearchedValue.current.value = ''
@@ -21,7 +21,6 @@ const SearchBar = (props) => {
                    ref={refToMySearchedValue}
                    onKeyPress={(e) => e.key === 'Enter' && inputHandler()}
                    style={{width:"300px"}}
-
             />
             {/*<button onClick={inputHandler}>search</button>*/}
             <Button colorScheme='teal' variant='ghost' size={'sm'} onClick={inputHandler}>
