@@ -1,7 +1,7 @@
 import ApiHeaders from "../../Helpers/ApiHeaders";
 import ConvertToJson from "../../Helpers/ConvertToJson";
 
-function RepoDataHandler(argu, isPrivate) {
+function RepoDataHandler(argu, isPrivate,success, err) {
     const repoName = argu
     console.log("value of :", isPrivate)
 
@@ -17,10 +17,14 @@ function RepoDataHandler(argu, isPrivate) {
         redirect: 'follow'
     };
 
+
     fetch("https://api.github.com/user/repos", requestOptions)
         .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
+        .then(result =>success(result))
+        .catch((error) => {
+            console.log('error', error)
+            err()
+        });
 
 };
 

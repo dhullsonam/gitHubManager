@@ -49,33 +49,15 @@ const HomePage = () => {
     // let valueFromSearchBar = props.filterByValue
 
     const handleDeleteRepo = async (id) => {
-        var updateItems = originalItems.filter((i) => {
+        let  updateItems = originalItems.filter((i) => {
             return i.id != id
         });
+        originalItems = updateItems
         await setItems(updateItems)
+        console.log("updateItems : " ,updateItems)
     }
 
-
-    const sss = () => {
-        console.log("called sss")
-        console.log(items)
-        // let aa = Array(items)
-
-    }
-
-    // if (val != '') {
-    //     items = items.filter((obj) => {
-    //         return obj.name.includes(val)
-    //     })
-    //     if (items.length <= 0) {
-    //         return <RepoNotFound dia={true}
-    //             refresh={sss}
-    //         />
-    //     } else {
-    //         setItems(items)
-    //     }
-    // }
-
+    console.log("originalItems are :  ", originalItems)
 
     return (
         <div>
